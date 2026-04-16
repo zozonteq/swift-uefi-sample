@@ -1,3 +1,4 @@
+
 SWIFTC     = swiftc
 CLANG      = clang
 LLDLINK    = lld-link
@@ -32,7 +33,7 @@ endif
 
 SRC_DIR    = src
 BUILD_DIR  = build/$(ARCH)
-SOURCES    = $(wildcard $(SRC_DIR)/*.swift)
+SOURCES = $(shell find $(SRC_DIR) -name '*.swift')
 STUBS_SRC  = $(SRC_DIR)/stubs.c
 
 SWIFT_OBJ  = $(BUILD_DIR)/main.obj
