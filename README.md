@@ -15,8 +15,9 @@ Build UEFI Application with Swift-Embedded.
 
 
 # Build and Run
-Embedded Swift is require. Following this docs to setup environment first.
-https://docs.swift.org/embedded/documentation/embedded/installembeddedswift
+1. Embedded Swift is required. Following this docs to setup environment first.
+- https://docs.swift.org/embedded/documentation/embedded/installembeddedswift
+2. To run UEFI Application on QEMU. Also you need a pre-build UEFI such as `OVMF.fd`(x86_64) or `OVMF_AA.fd`(Aarch64)
 
 ```shell
 make run # run uefi application(x86_64) in qemu
