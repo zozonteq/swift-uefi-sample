@@ -8,7 +8,12 @@ Build UEFI Application with Swift-Embedded.
 
 
 # Build and Run
+Embedded Swift is require. Following this docs to setup environment first.
+https://docs.swift.org/embedded/documentation/embedded/installembeddedswift
+
 ```shell
-make run # run uefi application(x86_64)
-make run ARCH=arm64 # run uefi application(Aarch64)
+make run # run uefi application(x86_64) in qemu
+make run ARCH=arm64 # run uefi application(Aarch64) in qemu
 ```
+- Build article is stored at `build/x64/BOOTX64.EFI`(x86_64), `build/arm64/BOOTAA64.EFI`(aarch64).
+- Works on physical device. (Tested on Surface Pro 2017)
