@@ -1,4 +1,11 @@
+[![Swift](https://img.shields.io/badge/Swift-Embedded-orange?logo=swift)](https://docs.swift.org/embedded/)
+[![Platform](https://img.shields.io/badge/Platform-UEFI-blue)](https://uefi.org/)
+[![Arch](https://img.shields.io/badge/Arch-x86__64%20%7C%20AArch64-lightgrey)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+
+
 # swift-uefi-sample
+
 Build UEFI Application with Swift-Embedded.  
 `x86_64` and `Aarch64` are supported now.
 # Preview
