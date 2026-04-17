@@ -5,6 +5,7 @@ LLDLINK    = lld-link
 
 # Architecture selection: x86 (default) or arm64
 ARCH       ?= x86
+NOGRAPHICS ?= false
 
 ifeq ($(ARCH),arm64)
   SWIFT_TARGET   = aarch64-none-none-elf
@@ -15,9 +16,11 @@ ifeq ($(ARCH),arm64)
   QEMU_MACHINE   = -machine virt,highmem=off -cpu cortex-a57
   QEMU_DRIVE     = -drive if=none,id=esp,format=raw,file=fat:rw:mnt \
                    -device virtio-blk-device,drive=esp
-  QEMU_DISPLAY   = -device ramfb \
-                   -device qemu-xhci \
-                   -display cocoa
+  ifeq ($(NOGRAPHICS),true)
+    QEMU_DISPLAY = -nographic
+  else
+    QEMU_DISPLAY = -device ramfb -device qemu-xhci -display cocoa
+  endif
   QEMU_DEBUG_EXIT =
   OVMF           = OVMF_AA64.fd
 else
@@ -28,6 +31,11 @@ else
   QEMU           = qemu-system-x86_64
   QEMU_MACHINE   = -cpu Haswell,+xsave,+avx,+avx2
   QEMU_DRIVE     = -drive if=ide,format=raw,file=fat:rw:mnt
+  ifeq ($(NOGRAPHICS),true)
+    QEMU_DISPLAY = -nographic
+  else
+    QEMU_DISPLAY =
+  endif
   OVMF           = OVMF.fd
 endif
 
