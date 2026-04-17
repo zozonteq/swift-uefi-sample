@@ -1,4 +1,4 @@
 build
 mnt
-OVMF.fd
+*.fd
 .DS_Store

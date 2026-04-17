@@ -41,12 +41,6 @@ STUBS_OBJ  = $(BUILD_DIR)/stubs.obj
 SWIFT_IR   = $(BUILD_DIR)/main.ll
 OUTPUT     = $(BUILD_DIR)/$(EFI_NAME)
 
-# SWIFTFLAGS = \
-#   -enable-experimental-feature Embedded \
-#   -target $(SWIFT_TARGET) \
-#   -parse-as-library \
-#   -wmo \
-#   -Osize
 SWIFTFLAGS = \
   -enable-experimental-feature Embedded \
   -target $(SWIFT_TARGET) \
@@ -61,11 +55,6 @@ CLANGFLAGS = \
   -ffreestanding \
   -c \
   -Oz
-
-#LDFLAGS = \
-#  -subsystem:efi_application \
-#  -entry:efi_main \
-#  -nodefaultlib
   
 LDFLAGS = \
   -subsystem:efi_application \
