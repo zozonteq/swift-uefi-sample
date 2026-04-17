@@ -14,19 +14,6 @@ public struct EFITableHeader {
     var reserved: UInt32
 }
 
-// https://dox.ipxe.org/struct__EFI__SIMPLE__TEXT__OUTPUT__PROTOCOL.html
-public struct SimpleTextOutput {
-    var reset: UInt64
-    var outputString: UInt64
-    var testString: UInt64
-    var queryMode: UInt64
-    var setMode: UInt64
-    var setAttribute: UInt64
-    var clearScreen: UInt64
-    var setCursorPosition: UInt64
-    var enableCursor: UInt64
-    var mode: UInt64  // pointer of *SIMPLE_TEXT_OUTPUT_MODE
-}
 
 // EFI GUID
 public struct EFI_GUID {

@@ -2,24 +2,14 @@
 //  main.swift
 //  swift-os
 //
+
 @_silgen_name("init_allocator")
 func init_allocator(_ bs: UnsafeMutableRawPointer?)
 
 var IMAGE_HANDLE: UInt64?
 var SYSTEM_TABLE: UnsafeMutablePointer<EFISystemTable>?
 
-public func uefiPrint(_ message: String) {
-    guard let conOut = SYSTEM_TABLE?.pointee.conOut else { return }
-    typealias OutputFn = @convention(c) (UInt64, UnsafePointer<UInt16>) -> UInt64
-    let outputString = unsafeBitCast(conOut.pointee.outputString, to: OutputFn.self)
-    let handle = UInt64(UInt(bitPattern: conOut))
-    for byte in message.utf8 {
-        var buf: (UInt16, UInt16) = (UInt16(byte), 0x0000)
-        withUnsafeMutableBytes(of: &buf) { raw in
-            _ = outputString(handle, raw.baseAddress!.assumingMemoryBound(to: UInt16.self))
-        }
-    }
-}
+
 func getBuildArchitecture() -> String {
     #if arch(x86_64)
     return "x86_64"
