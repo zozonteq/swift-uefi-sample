@@ -13,6 +13,9 @@ Build UEFI Application with Swift-Embedded.
 | --- | --- | 
 | <img width="800"  alt="image" src="https://github.com/user-attachments/assets/f295e375-d1de-4dfe-9675-9eee57fc6c92" /> | <img width="800" alt="image" src="https://github.com/user-attachments/assets/3f206209-d192-4cf5-b0b9-1f05b2f2d5eb" /> |
 
+# Features
+- GOP(Graphics Output Protocol)
+- Simple Text Output
 
 # Build and Run
 1. Embedded Swift is required. Following this docs to setup environment first.
