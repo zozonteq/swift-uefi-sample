@@ -16,6 +16,7 @@ Build UEFI Application with Swift-Embedded.
 # Features
 - GOP(Graphics Output Protocol)
 - Simple Text Output
+- Some UEFI Structures(e.g. BootServices)
 
 # Build and Run
 1. Embedded Swift is required. Following this docs to setup environment first.
